@@ -1,14 +1,21 @@
 package utitity.mahmoud.prayertimes.datalayer.local.room;
 
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+import utitity.mahmoud.prayertimes.datalayer.model.Timings;
 
 @Entity(tableName = "prayers")
 public class DayPrayerItem {
 
+    @PrimaryKey
+    int id;
     private int day;
     private int month;
     private int year;
 
+    private String dayDate;
+
+    private Timings timings;
 
     public int getDay() {
         return day;
@@ -32,5 +39,21 @@ public class DayPrayerItem {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    public String getDayDate() {
+        return dayDate;
+    }
+
+    public void setDayDate(String dayDate) {
+        this.dayDate = dayDate;
+    }
+
+    public Timings getTimings() {
+        return timings;
+    }
+
+    public void setTimings(Timings timings) {
+        this.timings = timings;
     }
 }

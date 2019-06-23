@@ -18,4 +18,7 @@ public interface DayPrayerDao {
     @Query("select  * from prayers where day = :day and month = :month and year = :year")
     public DayPrayerItem getPrayerByDay(int year, int month, int day);
 
+    @Query("select count(*) from prayers")
+    public int getCount();
+
 }
