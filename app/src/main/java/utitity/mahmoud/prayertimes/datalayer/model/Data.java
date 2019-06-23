@@ -15,6 +15,27 @@ public class Data {
     @Expose
     private List<Day> secondMonth = null;
 
+
+    @SerializedName("1")
+    @Expose
+    private List<Day> _3 = null;
+
+    @SerializedName("2")
+    @Expose
+    private List<Day> _4 = null;
+
+
+    @SerializedName("1")
+    @Expose
+    private List<Day> _5 = null;
+
+    @SerializedName("6")
+    @Expose
+    private List<Day> _6 = null;
+
+
+
+
     public Data() {
     }
 
@@ -39,4 +60,35 @@ public class Data {
         this.secondMonth = secondMonth;
     }
 
+    public List<Day> get_3() {
+        return _3;
+    }
+
+    public void set_3(List<Day> _3) {
+        this._3 = _3;
+    }
+
+    public List<Day> get_4() {
+        return _4;
+    }
+
+    public void set_4(List<Day> _4) {
+        this._4 = _4;
+    }
+
+    public List<Day> get_5() {
+        return _5;
+    }
+
+    public void set_5(List<Day> _5) {
+        this._5 = _5;
+    }
+
+    public List<Day> get_6() {
+        return _6;
+    }
+
+    public void set_6(List<Day> _6) {
+        this._6 = _6;
+    }
 }
