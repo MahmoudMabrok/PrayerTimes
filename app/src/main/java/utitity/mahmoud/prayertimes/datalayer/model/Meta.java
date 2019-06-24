@@ -8,7 +8,7 @@ public class Meta {
 
     @SerializedName("latitude")
     @Expose
-    private int latitude;
+    private float latitude;
     @SerializedName("longitude")
     @Expose
     private float longitude;
@@ -47,7 +47,7 @@ public class Meta {
      * @param latitude
      * @param offset
      */
-    public Meta(int latitude, float longitude, String timezone, Method method, String latitudeAdjustmentMethod, String midnightMode, String school, Offset offset) {
+    public Meta(float latitude, float longitude, String timezone, Method method, String latitudeAdjustmentMethod, String midnightMode, String school, Offset offset) {
         super();
         this.latitude = latitude;
         this.longitude = longitude;
@@ -59,11 +59,11 @@ public class Meta {
         this.offset = offset;
     }
 
-    public int getLatitude() {
+    public float getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(int latitude) {
+    public void setLatitude(float latitude) {
         this.latitude = latitude;
     }
 

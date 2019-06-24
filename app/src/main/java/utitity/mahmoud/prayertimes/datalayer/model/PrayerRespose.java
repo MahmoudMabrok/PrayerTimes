@@ -27,7 +27,7 @@ public class PrayerRespose {
         this.code = code;
     }
 
-    public Data getDate() {
+    public Data getData() {
         return data;
     }
 

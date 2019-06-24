@@ -7,7 +7,7 @@ import utitity.mahmoud.prayertimes.datalayer.model.Timings;
 @Entity(tableName = "prayers")
 public class DayPrayerItem {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     int id;
     private int day;
     private int month;
@@ -55,5 +55,16 @@ public class DayPrayerItem {
 
     public void setTimings(Timings timings) {
         this.timings = timings;
+    }
+
+    @Override
+    public String toString() {
+        return "DayPrayerItem{" +
+                "day=" + day +
+                ", month=" + month +
+                ", year=" + year +
+                ", dayDate='" + dayDate + '\'' +
+                ", timings=" + timings +
+                '}';
     }
 }

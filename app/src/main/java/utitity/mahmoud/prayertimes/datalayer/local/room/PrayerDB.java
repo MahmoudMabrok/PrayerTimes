@@ -7,7 +7,7 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
-@Database(entities = {DayPrayerItem.class}, version = 1, exportSchema = false)
+@Database(entities = {DayPrayerItem.class}, version = 2, exportSchema = false)
 @TypeConverters({TimingConverter.class})
 public abstract class PrayerDB extends RoomDatabase {
 
@@ -17,6 +17,7 @@ public abstract class PrayerDB extends RoomDatabase {
         if (instance == null) {
             instance = Room.databaseBuilder(application, PrayerDB.class, "prayer")
                     .allowMainThreadQueries()
+                    .fallbackToDestructiveMigration()
                     .build();
         }
         return instance;

@@ -136,4 +136,19 @@ public class Timings {
         this.midnight = midnight;
     }
 
+
+    @Override
+    public String toString() {
+        return "Timings{" +
+                "fajr='" + fajr + '\'' +
+                ", sunrise='" + sunrise + '\'' +
+                ", dhuhr='" + dhuhr + '\'' +
+                ", asr='" + asr + '\'' +
+                ", sunset='" + sunset + '\'' +
+                ", maghrib='" + maghrib + '\'' +
+                ", isha='" + isha + '\'' +
+                ", imsak='" + imsak + '\'' +
+                ", midnight='" + midnight + '\'' +
+                '}';
+    }
 }
