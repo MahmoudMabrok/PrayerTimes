@@ -3,85 +3,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:layoutDirection="ltr"
     android:padding="@dimen/_16sdp"
-    tools:context=".feature.MainActivity">
+    tools:context=".feature.display_times.MainActivity">
 
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_16sdp">
+        app:cardCornerRadius="@dimen/_16sdp">
 
-        <TextView
-            android:id="@+id/tvCurrentdate"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="AAAA"
-            android:textAlignment="center"
-            android:textSize="@dimen/_22ssp" />
+            android:layout_marginBottom="@dimen/_16sdp">
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tvCurrentdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AAAA"
+                android:textAlignment="center"
+                android:textSize="@dimen/_22ssp" />
 
-    <LinearLayout
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTimes"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_16sdp">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Fajr"
-            android:textAlignment="center"
-            android:textSize="@dimen/_17ssp" />
-
-        <View
-            android:layout_width="@dimen/_3sdp"
-            android:layout_height="match_parent"
-            android:background="@color/black" />
-
-        <TextView
-            android:id="@+id/tvFajr"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="Fajr"
-            android:textAlignment="center"
-            android:textSize="@dimen/_17ssp" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_16sdp">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="0dp"
+        <Button
+            android:id="@+id/btnOpenSetting"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Shrooq"
-            android:textAlignment="center"
-            android:textSize="@dimen/_17ssp" />
-
-        <View
-            android:layout_width="@dimen/_3sdp"
-            android:layout_height="match_parent"
-            android:background="@color/black" />
-
-        <TextView
-            android:id="@+id/tvShrooq"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="Fajr"
-            android:textAlignment="center"
-            android:textSize="@dimen/_17ssp" />
-
-
-    </LinearLayout>
-
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:text="Open Setting" />
+    </FrameLayout>
 
 </LinearLayout>

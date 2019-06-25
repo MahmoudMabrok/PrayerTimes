@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">PrayerTimes</string>
+    <array name="times">
+        <item>Fajr</item>
+        <item>Sunrise</item>
+        <item>Dhur</item>
+        <item>Asr</item>
+        <item>Maghrib</item>
+        <item>ISHA</item>
+    </array>
+
+
 </resources>

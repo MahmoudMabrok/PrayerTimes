@@ -4,6 +4,9 @@ package utitity.mahmoud.prayertimes.datalayer.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Timings {
 
     @SerializedName("Fajr")
@@ -151,4 +154,17 @@ public class Timings {
                 ", midnight='" + midnight + '\'' +
                 '}';
     }
+
+    public List<String> getValues() {
+        List<String> values = new ArrayList<>();
+        values.add(fajr);
+        values.add(sunrise);
+        values.add(dhuhr);
+        values.add(asr);
+        values.add(maghrib);
+        values.add(isha);
+
+        return values;
+    }
+
 }
