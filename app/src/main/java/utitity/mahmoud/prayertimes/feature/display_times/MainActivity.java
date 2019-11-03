@@ -2,6 +2,7 @@ package utitity.mahmoud.prayertimes.feature.display_times;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,14 +42,15 @@ public class MainActivity extends AppCompatActivity {
 
         Stetho.initializeWithDefaults(getApplication());
 
+        repository = new Repository(getApplication());
         initRv();
         try {
             int day = DateOperation.getCurrentDay();
             int month = DateOperation.getCurrentMonth();
             int year = DateOperation.getCurrentYear();
             DayPrayerItem dayPrayerItem = repository.getPrayer(year, month, day);
+            Log.d(TAG, "onCreate: ");
             loadData(dayPrayerItem);
-            //  fillUI(dayPrayerItem);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         String[] times = getResources().getStringArray(R.array.times);
         timesAdapter.setValues(Arrays.asList(times), dayPrayerItem.getTimings().getValues());
         tvCurrentdate.setText(dayPrayerItem.getDayDate());
+        Log.d(TAG, "loadData: " + dayPrayerItem.getDayDate());
     }
 
     private void initRv() {

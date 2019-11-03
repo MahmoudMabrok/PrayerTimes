@@ -13,12 +13,12 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_16sdp"
         app:cardCornerRadius="@dimen/_16sdp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_16sdp">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/tvCurrentdate"
@@ -41,7 +41,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/btnOpenSetting"

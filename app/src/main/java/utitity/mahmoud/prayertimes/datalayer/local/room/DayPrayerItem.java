@@ -12,7 +12,6 @@ public class DayPrayerItem {
     private int day;
     private int month;
     private int year;
-
     private String dayDate;
 
     private Timings timings;

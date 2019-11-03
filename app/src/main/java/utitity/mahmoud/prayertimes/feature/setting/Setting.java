@@ -44,7 +44,7 @@ public class Setting extends AppCompatActivity {
 
     @OnClick(R.id.btnGetData)
     public void onViewClicked() {
-        // get Location data, // TODO: 6/25/2019 should be replaced with
+        // get Location data
         String langitude = "30.5";
         String longitude = "35.5";
 
@@ -59,6 +59,7 @@ public class Setting extends AppCompatActivity {
         params.put("year", String.valueOf(year));
         params.put("latitude", langitude);
         params.put("longitude", longitude);
+        // make call
         repository.getPrayerResponse(params).enqueue(new Callback<PrayerRespose>() {
             @Override
             public void onResponse(Call<PrayerRespose> call, Response<PrayerRespose> response) {
