@@ -24,7 +24,7 @@
                 android:id="@+id/tvCurrentdate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="AAAA"
+                android:text="NA"
                 android:textAlignment="center"
                 android:textSize="@dimen/_22ssp" />
 

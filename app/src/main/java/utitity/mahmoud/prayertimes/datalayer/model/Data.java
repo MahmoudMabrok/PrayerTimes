@@ -34,6 +34,11 @@ public class Data {
     private List<Day> _6 = null;
 
 
+    @SerializedName("11")
+    @Expose
+    private List<Day> _11 = null;
+
+
 
 
     public Data() {
@@ -90,5 +95,13 @@ public class Data {
 
     public void set_6(List<Day> _6) {
         this._6 = _6;
+    }
+
+    public List<Day> get_11() {
+        return _11;
+    }
+
+    public void set_11(List<Day> _11) {
+        this._11 = _11;
     }
 }

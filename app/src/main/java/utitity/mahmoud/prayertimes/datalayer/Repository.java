@@ -46,4 +46,7 @@ public class Repository {
     }
 
 
+    public int getPrayerCount() {
+        return dayPrayerDao.getCount();
+    }
 }

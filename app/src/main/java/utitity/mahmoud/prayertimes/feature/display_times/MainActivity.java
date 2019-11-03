@@ -41,27 +41,40 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Stetho.initializeWithDefaults(getApplication());
-
         repository = new Repository(getApplication());
         initRv();
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        load();
+    }
+
+    private void load() {
         try {
             int day = DateOperation.getCurrentDay();
             int month = DateOperation.getCurrentMonth();
             int year = DateOperation.getCurrentYear();
             DayPrayerItem dayPrayerItem = repository.getPrayer(year, month, day);
-            Log.d(TAG, "onCreate: ");
+            Log.d(TAG, "current data : month " + month);
             loadData(dayPrayerItem);
         } catch (Exception e) {
             e.printStackTrace();
+            showMessage("please download data from setting ^_^");
         }
-
     }
 
     private void loadData(DayPrayerItem dayPrayerItem) {
-        String[] times = getResources().getStringArray(R.array.times);
-        timesAdapter.setValues(Arrays.asList(times), dayPrayerItem.getTimings().getValues());
-        tvCurrentdate.setText(dayPrayerItem.getDayDate());
-        Log.d(TAG, "loadData: " + dayPrayerItem.getDayDate());
+        if (dayPrayerItem != null) {
+            String[] times = getResources().getStringArray(R.array.times);
+            timesAdapter.setValues(Arrays.asList(times), dayPrayerItem.getTimings().getValues());
+            tvCurrentdate.setText(dayPrayerItem.getDayDate());
+            Log.d(TAG, "loadData: data exist ");
+        }
+        Log.d(TAG, "loaded Data: " + dayPrayerItem.getDayDate());
     }
 
     private void initRv() {
